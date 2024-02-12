@@ -3,7 +3,7 @@ total_sum = sum(nums)
 
 
 # We will improve on Iteration #2
-# Iteration #3, with alpha-beta pruning but turns out to be slightly slower..
+# Iteration #2.5, with alpha-beta pruning but turns out to be slightly slower..
 dp = {}
 def minimax3(i, j, current, maximiser, alpha, beta):
     if i > j:

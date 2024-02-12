@@ -33,3 +33,22 @@ def minimax2(i, j, current, maximiser):
     return dp[key]
 
 #print(minimax2(0, len(nums)-1, 0, True) == 1)
+
+
+#Iteration #3, the better way to get the actual score, alot faster as well, I dont think we will do alpha-beta for this..
+dp = {}
+def minimax3(i, j, maximiser):
+    if i > j:
+        return 0
+    key = (i, j, maximiser)
+    if key in dp:
+        return dp[key]
+    if maximiser:
+        dp[key] = max(minimax3(i + 1, j, not maximiser) + nums[i], 
+                   minimax3(i, j - 1, not maximiser) + nums[j])
+    else:
+        dp[key] = min(minimax3(i + 1, j, not maximiser) - nums[i], 
+                   minimax3(i, j - 1, not maximiser) - nums[j])
+    return dp[key]
+
+print(minimax3(0, len(nums) - 1, True) >= 0)
