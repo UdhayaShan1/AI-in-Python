@@ -27,9 +27,9 @@ def minimax2(i, j, current, maximiser):
     if key in dp:
         return dp[key]
     if maximiser:
-        dp[key] = max(minimax(i + 1, j, current+nums[i], not maximiser), minimax(i, j - 1, current+nums[j], not maximiser))
+        dp[key] = max(minimax2(i + 1, j, current+nums[i], not maximiser), minimax2(i, j - 1, current+nums[j], not maximiser))
     else:
-        dp[key] = min(minimax(i + 1, j, current, not maximiser), minimax(i, j - 1, current, not maximiser))
+        dp[key] = min(minimax2(i + 1, j, current, not maximiser), minimax2(i, j - 1, current, not maximiser))
     return dp[key]
 
 #print(minimax2(0, len(nums)-1, 0, True) == 1)
