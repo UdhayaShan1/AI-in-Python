@@ -1,4 +1,4 @@
-# AI Problem Solving
+# 🤖 AI Problem Solving 🧠
 
 Welcome to the AI Problem Solving repository! This repository contains code implementations for various AI problems, focusing on search problems, including uninformed, informed, and local search algorithms.
 
